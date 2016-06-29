@@ -29,14 +29,26 @@ angular.module('shopCartApp')
 		$scope.deleteAray.push(indx);
 	};
 
-	$scope.removeColumn = function () {
+	/*$scope.removeColumn = function () {
 
 		angular.forEach($scope.deleteAray, function(key) {
 			$scope.dynamicColumns.splice(key.field,1);
 		});
 		$scope.deleteAray = [];
-	};
+	};*/
 
+	
+	 $scope.removeColumn = function (indx) {
+	        debugger;
+	        var objectsToDelete=$scope.deleteAray.length;
+	        for (var i = 0; i < objectsToDelete; i++) {
+	            var index=$scope.dynamicColumns.indexOf($scope.deleteAray[i]);
+	            $scope.dynamicColumns.splice(index, 1);
+	        }
+	$scope.deleteAray = [];
+	   }
+	
+	
 
 	$scope.columnsSelected = $scope.dynamicColumns;
 	$scope.myData = [
