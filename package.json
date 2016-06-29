@@ -1,0 +1,10 @@
+{
+  "name": "angularDynamicGrid",
+  "main": "server.js",
+  "author": "Babu Selvam",
+  "dependencies": {
+    "body-parser": "~1.4.2",
+    "express": "",
+    "express-session": "^1.7.6"
+}
+}

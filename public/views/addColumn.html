@@ -1,0 +1,52 @@
+	
+	
+        <div class="modal-header">
+            <h3 class="modal-title">Add Column</h3>
+        </div>
+        <div class="modal-body">
+            
+			
+  <form name="userForm">
+    <div class="form-group" >
+		<div>Field Name </div>
+      	<input type="text" class="form-control" name="field" ng-model="user.field" required />
+		<p class="has-error" ng-show="userForm.field.$error.required && userForm.field.$dirty">Field name is required.</p>
+    
+    </div>
+    
+    <div class="form-group">
+		<div>Display Name </div>
+      	<input type="text" class="form-control" ng-minlength="3" ng-maxlength="20" name="name" ng-model="user.displayName" required />
+      	<p class="has-success" ng-show="userForm.name.$error.minlength && userForm.name.$dirty" >Display name is too short.</p>
+	    <p class="has-success" ng-show="userForm.name.$error.maxlength && userForm.name.$dirty">Display name is too long.</p>
+	    <p class="has-error" ng-show="userForm.name.$error.required && userForm.name.$dirty">Display name is required.</p>
+    </div>
+	<div class="form-group" >
+		<div>Column Type </div>
+      <select name="columnType" class="form-control" ng-model="user.columnType">
+		<option value=""> --Select-- </option>
+		<option value="Integer"> Integer </option>
+		<option value="String"> String </option>
+		<option value="Boolean"> Boolean </option>
+		<option value="Date"> Date </option>
+		
+	  </select>
+      <p class="has-error" ng-show="userForm.columnType.$invalid">columnType name is required.</p>
+    </div>
+	<div class="form-group" >
+		<div>Editable </div>
+		<label><input type="radio" name="optradio" ng-click="user.enableCellEdit = true">Yes</label>
+		<label><input type="radio" name="optradio" ng-click="user.enableCellEdit = false">No</label>
+    </div>
+	
+  </form>
+			
+			
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-disabled="userForm.$invalid || !userForm.name.$dirty" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    
+
+ 

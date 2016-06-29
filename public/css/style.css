@@ -1,0 +1,14 @@
+/*style.css*/
+.gridStyle {
+    border: 1px solid rgb(212,212,212);
+    width: 100%; 
+    height: 300px;
+}
+
+.has-error {
+	color: red;
+}
+
+.has-success {
+	color: green;
+}
